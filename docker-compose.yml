@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  databaseDisaster:
+  postgresDB:
     image: postgres
     container_name: database_disaster
 
@@ -29,11 +29,10 @@ services:
     volumes:
       - .:/usr/app
     links:
-      - databaseDisaster
+      - postgresDB
     depends_on:
-      - databaseDisaster
+      - postgresDB
 
 volumes:
   pgdata:
     driver: local
-    
