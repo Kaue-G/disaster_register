@@ -17,21 +17,21 @@ services:
     volumes:
       - pgdata:/data/postgres
 
-  app: 
-    build: .
-    container_name: app_disaster
+  # app: 
+  #   build: .
+  #   container_name: app_disaster
     
-    env_file:
-    - ./.env
+  #   env_file:
+  #   - ./.env
     
-    ports:
-      - ${SERVER_PORT}:${SERVER_PORT}
-    volumes:
-      - .:/usr/app
-    links:
-      - postgresDB
-    depends_on:
-      - postgresDB
+  #   ports:
+  #     - ${SERVER_PORT}:${SERVER_PORT}
+  #   volumes:
+  #     - .:/usr/app
+  #   links:
+  #     - postgresDB
+  #   depends_on:
+  #     - postgresDB
 
 volumes:
   pgdata:
