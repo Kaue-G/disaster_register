@@ -7,7 +7,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --poll --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
+    
+    "typeorm": "typeorm-ts-node-commonjs -d src/shared/infra/typeorm/data-source.ts",
+    "migration:generate": "typeorm-ts-node-commonjs -d src/shared/infra/typeorm/data-source.ts migration:generate src/shared/infra/typeorm/migrations/default",
+    "migrate:create": "typeorm-ts-node-commonjs migration:create src/shared/infra/typeorm/migrations/default"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
