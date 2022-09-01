@@ -1,6 +1,5 @@
 import express, { Request, Response } from 'express'
-import 'reflect-metadata'
-import { AppDataSource } from '../typeorm'
+import { AppDataSource } from '../typeorm/data-source'
 
 AppDataSource.initialize().then(() => {
     const app = express();
